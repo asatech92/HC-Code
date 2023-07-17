@@ -1,29 +1,2 @@
-Parameters:
-  InstanceType:
-    Type: String
-    Default: t2.micro
-    Description: EC2 instance type
-
-Resources:
-  EC2Instance:
-    Type: AWS::EC2::Instance
-    Properties:
-      ImageId: ami-12345678  # Replace with the desired AMI ID
-      InstanceType: !Ref InstanceType
-      KeyName: my-key-pair   # Replace with your key pair name
-
-  S3Bucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: my-example-bucket
-
-Outputs:
-  EC2InstancePublicIP:
-    Value: !GetAtt EC2Instance.PublicIp
-    Description: Public IP address of the EC2 instance
-
-  S3BucketName:
-    Value: !Ref S3Bucket
-    Description: Name of the created S3 bucket
 AWS Access ID:
 AWS Secret Key: 
